@@ -450,7 +450,7 @@ public final class AppUtils {
      */
     public static void launchAppDetailsSettings(final String packageName) {
         if (isSpace(packageName)) return;
-        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         intent.setData(Uri.parse("package:" + packageName));
         Utils.getApp().startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
@@ -736,7 +736,7 @@ public final class AppUtils {
      * </ul>
      *
      * @param packageName The name of the package.
-     * @return 当前应用的 AppInfo
+     * @return the application's information
      */
     public static AppInfo getAppInfo(final String packageName) {
         try {
